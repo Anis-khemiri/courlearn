@@ -17,7 +17,7 @@ import { Modal, ModalHeader, ModalBody, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import { Control, LocalForm, Errors } from "react-redux-form";
 import { Loading } from "./LoadingComponent";
-
+import {baseUrl} from '../shared/baseUrl';
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
 const minLength = (len) => (val) => val && val.length >= len;
@@ -135,15 +135,15 @@ export class CommentForm extends Component {
   }
 }
 
-function RenderDish(props) {
-  console.log(props.dishId)
+function RenderDish({dish}) {
+  
   return (
     <div className="col-12 col-md-5 m-1" xs="12">
-      <Card key={props.dish.id}>
-        <CardImg width="100%" src={props.dish.image} alt={props.dish.name} />
+      <Card key={dish.id}>
+        <CardImg width="100%" src={baseUrl + dish.image} alt={dish.name} />
         <CardBody>
-          <CardTitle>{props.dish.name}</CardTitle>
-          <CardText>{props.dish.description}</CardText>
+          <CardTitle>{dish.name}</CardTitle>
+          <CardText>{dish.description}</CardText>
         </CardBody>
       </Card>
     </div>
