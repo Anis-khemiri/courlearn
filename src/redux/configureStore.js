@@ -10,7 +10,7 @@ import { InitialFeedback } from './forms';
 export const ConfigureStore = () => {
 
 
-    const enhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+  
     const store = createStore(
        combineReducers({
            dishes: Dishes,

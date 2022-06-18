@@ -42,7 +42,7 @@ export const postComment = (dishId, rating, author, comment) => (dispatch) => {
       },
       error => {
         var errmess = new Error(error.message);
-            throw error;
+            throw errmess;
       })
     .then(response => response.json())
     .then(response => dispatch(addComment(response)))
