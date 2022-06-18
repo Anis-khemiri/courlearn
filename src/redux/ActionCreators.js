@@ -1,12 +1,12 @@
 import * as ActionTypes from './ActionTypes';
-import { DISHES } from '../shared/dishes';
+
 import { baseUrl } from '../shared/baseUrl';
 import fetch from 'cross-fetch';
 
 
 
 
-
+// add comment
 
 export const addComment = (comment) => ({
     type: ActionTypes.ADD_COMMENT,
@@ -51,7 +51,7 @@ export const postComment = (dishId, rating, author, comment) => (dispatch) => {
 };
 
 
-
+// post feedback
 
 export const postFeedback = (feedback) => (dispatch) => {
     const newFeedback = {
@@ -95,7 +95,7 @@ export const postFeedback = (feedback) => (dispatch) => {
 
 
 
-
+// fetch dish
  export const fetchDishes = () => (dispatch) => {
     dispatch(dishesLoading(true));
     
@@ -135,7 +135,7 @@ export const addDishes = (dishes) => ({
 
 
 
- 
+ //fetch comments
 
 export const fetchComments = () => (dispatch) => {   
     return fetch(baseUrl + 'comments')
@@ -163,11 +163,18 @@ export const fetchComments = () => (dispatch) => {
     payload: errmess
  });
 
-export const addComments = (comments) => ({
-    type: ActionTypes.ADD_COMMENTS,
-    payload: comments
+ export const addComments = (comments) => ({
+   type: ActionTypes.ADD_COMMENTS,
+   payload: comments
 });
 
+
+
+
+
+
+
+//fetch promo
 export const fetchPromos = () => (dispatch) => {
     dispatch(promosLoading(true));
     
@@ -203,6 +210,11 @@ export const addPromos = (promos) => ({
     type: ActionTypes.ADD_PROMOS,
     payload: promos
 });
+
+
+
+
+//fetch leaader
 export const fetchLeaders = () => (dispatch) => {
 
     dispatch(leadersLoading(true));
